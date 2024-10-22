@@ -1,11 +1,11 @@
 <?php
 
-namespace Sankyutech\StinvoiceClient;
+namespace Sankyutech\StInvoiceClient;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Sankyutech\StinvoiceClient\Skeleton\SkeletonClass
+ * @see \Sankyutech\StInvoiceClient\Skeleton\SkeletonClass
  */
 class StinvoiceClientFacade extends Facade
 {

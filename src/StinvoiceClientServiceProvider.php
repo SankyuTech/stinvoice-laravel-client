@@ -1,6 +1,6 @@
 <?php
 
-namespace Sankyutech\StinvoiceClient;
+namespace Sankyutech\StInvoiceClient;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -58,7 +58,7 @@ class StinvoiceClientServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('stinvoice-client', function () {
-            return new StinvoiceClient;
+            return new StinvoiceClient();
         });
     }
 }

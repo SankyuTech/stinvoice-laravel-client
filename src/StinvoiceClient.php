@@ -1,6 +1,6 @@
 <?php
 
-namespace Sankyutech\StinvoiceClient;
+namespace Sankyutech\StInvoiceClient;
 
 class StinvoiceClient
 {
