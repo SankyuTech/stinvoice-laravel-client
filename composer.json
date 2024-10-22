@@ -21,6 +21,7 @@
   },
   "require-dev": {
     "orchestra/testbench": "^6.47",
+    "orchestra/testbench-dusk": "^6.52",
     "phpunit/phpunit": "^9.0"
   },
   "autoload": {
@@ -34,7 +35,7 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/phpunit",
+    "test": "vendor/bin/phpunit -c phpunit.xml --testdox --colors --do-not-cache-result",
     "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
   },
   "config": {
