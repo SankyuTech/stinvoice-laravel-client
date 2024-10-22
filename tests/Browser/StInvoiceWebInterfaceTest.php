@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\Dusk\Options;
 use Orchestra\Testbench\Dusk\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Sankyutech\StInvoiceClient\Tests\DuskTestCase;
 use Sankyutech\StInvoiceClient\StinvoiceClientServiceProvider;
 
-class StInvoiceWebInterfaceTest extends TestCase
+class StInvoiceWebInterfaceTest extends DuskTestCase
 {
     use RefreshDatabase;
 
