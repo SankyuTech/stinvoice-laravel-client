@@ -25,12 +25,12 @@ class StInvoiceController extends Controller
     public function company()
     {
         $company = DB::table('stinvoice_company')->first();
+        logger()->error('company', ['company' => $company]);
         return view('stinvoice-client::company.index');
     }
 
 
     // saas controller
-
     public function saasIndex($saas_id)
     {
         return view('stinvoice-client::dashboard');

@@ -13,7 +13,7 @@ return new class () extends Migration {
         Schema::create('stinvoice_company', function (Blueprint $table) {
             $table->id();
             $table->string('stinvoice_saas_id')->nullable();
-            $table->integer('registration_name')->nullable();
+            $table->string('registration_name')->nullable();
             $table->string('phone')->nullable();
             $table->string('tax_identification_no')->nullable();
             $table->string('identification_no')->nullable();

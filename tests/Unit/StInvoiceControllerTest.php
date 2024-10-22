@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Sankyutech\StInvoiceClient\StinvoiceClientServiceProvider;
 
-#[WithEnv('DB_CONNECTION', 'testing')]
 #[WithMigration]
 class StInvoiceControllerTest extends TestCase
 {
