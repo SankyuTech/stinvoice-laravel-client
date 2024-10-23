@@ -15,6 +15,7 @@ return new class () extends Migration {
             $table->string('stinvoice_saas_id')->nullable();
             $table->string('registration_name')->nullable();
             $table->string('phone')->nullable();
+            $table->string('email')->nullable();
             $table->string('tax_identification_no')->nullable();
             $table->string('identification_no')->nullable();
             $table->string('identification_type')->nullable();

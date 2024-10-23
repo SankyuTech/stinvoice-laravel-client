@@ -30,8 +30,9 @@ php artisan vendor:publish --tag=stinvoice-config
 
 ## Usage
 
+### Laravel 11 above put StinvoiceClientServiceProvider in boostrap/providers.php
 ```php
-// Usage description here
+Sankyutech\StinvoiceClient\StinvoiceClientServiceProvider::class,
 ```
 
 ### Testing
