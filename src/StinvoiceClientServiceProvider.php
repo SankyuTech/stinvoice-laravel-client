@@ -15,9 +15,9 @@ class StinvoiceClientServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'stinvoice-client');
+        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'stinvoice-client');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadRoutesFrom(__DIR__.'/stinvoice.php');
+        // $this->loadRoutesFrom(__DIR__.'/stinvoice.php');
 
         if ($this->app->runningInConsole()) {
 
@@ -34,9 +34,9 @@ class StinvoiceClientServiceProvider extends ServiceProvider
             // ], 'stinvoice-views');
 
             // // Publishing assets.
-            $this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/stinvoice-client'),
-            ], 'stinvoice-assets');
+            // $this->publishes([
+            //     __DIR__.'/../resources/assets' => public_path('vendor/stinvoice-client'),
+            // ], 'stinvoice-assets');
 
             // Publishing the translation files.
             /*$this->publishes([
