@@ -5,15 +5,29 @@
 You can install the package via composer:
 
 ```bash
+
 composer require sankyutech/stinvoice-client
+
 ```
 
-## (Optional) Migrate prepared database structure related to E-Invoice need
+### Register Service Provider
+
+Put StinvoiceClientServiceProvider in boostrap/providers.php or in configuration file app.php in provider section
+
+```php
+
+Sankyutech\StinvoiceClient\StinvoiceClientServiceProvider::class,
+
+```
+
+## (Optional) Migrate prepared database structure related to E-Invoice needs
 
 This action will migrate directly to database without publish to application database/migration directory. If your application database migration not sync with database, this might be option.
 
 ```php
+
 php artisan migrate --path=vendor/sankyutech/stinvoice-client/database/migrations
+
 ```
 
 ## Publish Vendor
@@ -23,20 +37,14 @@ php artisan migrate --path=vendor/sankyutech/stinvoice-client/database/migration
 If you want to track this database structure along with your application database migration, this might be the option
 
 ```php
-php artisan vendor:publish --tag=stinvoice-migrations
-```
-### Config
 
-```php
-php artisan vendor:publish --tag=stinvoice-config
+php artisan vendor:publish --tag=stinvoice-migrations
+php artisan migrate
+
 ```
 
 ## Usage
 
-### Laravel 11 above put StinvoiceClientServiceProvider in boostrap/providers.php
-```php
-Sankyutech\StinvoiceClient\StinvoiceClientServiceProvider::class,
-```
 
 ### Testing
 
