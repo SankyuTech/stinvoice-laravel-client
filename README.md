@@ -1,10 +1,4 @@
-# Very short description of the package
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sankyutech/stinvoice-client.svg?style=flat-square)](https://packagist.org/packages/sankyutech/stinvoice-client)
-[![Total Downloads](https://img.shields.io/packagist/dt/sankyutech/stinvoice-client.svg?style=flat-square)](https://packagist.org/packages/sankyutech/stinvoice-client)
-![GitHub Actions](https://github.com/sankyutech/stinvoice-client/actions/workflows/main.yml/badge.svg)
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+# STInvoice Laravel Client Package
 
 ## Installation
 
@@ -14,15 +8,24 @@ You can install the package via composer:
 composer require sankyutech/stinvoice-client
 ```
 
+## (Optional) Migrate prepared database structure related to E-Invoice need
+
+This action will migrate directly to database without publish to application database/migration directory. If your application database migration not sync with database, this might be option.
+
+```php
+php artisan migrate --path=vendor/sankyutech/stinvoice-client/database/migrations
+```
+
 ## Publish Vendor
+
+### Database
+
+If you want to track this database structure along with your application database migration, this might be the option
 
 ```php
 php artisan vendor:publish --tag=stinvoice-migrations
 ```
-
-```php
-php artisan vendor:publish --tag=stinvoice-assets
-```
+### Config
 
 ```php
 php artisan vendor:publish --tag=stinvoice-config
@@ -64,6 +67,3 @@ If you discover any security related issues, please email info@sankyutech.com in
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
