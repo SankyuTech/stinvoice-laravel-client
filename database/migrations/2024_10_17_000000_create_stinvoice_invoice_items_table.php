@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('stinvoice_invoice_items', function (Blueprint $table) {
             $table->id();
-            $table->string('internal_id');
             $table->integer('stinvoice_invoices_id')->nullable();
             $table->string('description');
             $table->decimal('unit_price',10,2);

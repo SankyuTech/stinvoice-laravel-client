@@ -10,7 +10,7 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('stinvoice_company', function (Blueprint $table) {
+        Schema::create('stinvoice_customer', function (Blueprint $table) {
             $table->id();
             $table->string('internal_reference_id')->nullable();
             $table->string('registration_name')->nullable();
@@ -20,7 +20,6 @@ return new class () extends Migration {
             $table->string('identification_no')->nullable();
             $table->string('identification_type')->nullable();
             $table->string('sst_registration_no')->default('NA')->nullable();
-            $table->string('msic_codes')->nullable();
             $table->string('address_line_1')->nullable();
             $table->string('address_line_2')->nullable();
             $table->string('address_line_3')->nullable();
@@ -28,10 +27,6 @@ return new class () extends Migration {
             $table->string('state')->nullable();
             $table->string('postcode')->nullable();
             $table->string('country_code')->default('MYS');
-            $table->string('stinvoice_key')->nullable();
-            $table->string('stinvoice_secret')->nullable();
-            $table->boolean('stinvoice_sandbox')->default(1);
-            $table->boolean('status')->default(1);
 
             $table->timestamps();
         });
@@ -42,7 +37,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('stinvoice_company');
+        Schema::dropIfExists('stinvoice_customer');
     }
 };
-
