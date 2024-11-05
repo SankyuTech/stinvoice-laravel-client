@@ -23,7 +23,7 @@ class CompanyCredentials
 	public function getCredential(){
 
 		$credential = DB::table('stinvoice_company')
-					 ->select('stinvoice_key','stinvoice_secret','stinvoice_production','status')
+					 ->select('stinvoice_key','stinvoice_secret','stinvoice_sandbox','status')
 					 ->where('internal_reference_id',$this->internal_reference_id)
 					 ->first();
 

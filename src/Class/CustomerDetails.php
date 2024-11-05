@@ -5,6 +5,10 @@ namespace Sankyutech\StInvoiceClient\Class;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
+use Sankyutech\StInvoiceClient\Class\Invoices;
+use Sankyutech\StInvoiceClient\Class\CompanyCredentials;
+
+
 class CustomerDetails
 {
 	public $internal_reference_id;
@@ -40,7 +44,30 @@ class CustomerDetails
 		return $credential;
 	}
 
-	public function saveDetail($data){
+	public function saveDetail($data,$supplier_id == null){
+
+		if($supplier_id == null){
+
+			$companyCredentials = new CompanyCredentials($supplier_id);
+			$credential = $companyCredentials->getCredential();
+
+			$invoice = new Invoices($this->internal_reference_id);
+			$check_party = $invoice->checkTaxNo(
+												$credential->stinvoice_key,
+												$credential->stinvoice_secret,
+												$credential->stinvoice_sandbox,
+												$data['tax_identification_no'],
+												$data['identification_no'],
+												$data['identification_type'],
+							);
+
+			if($check_party == false){
+
+				return ['error','Tax Identification Invalid'];
+
+			}
+
+		}
 
 		DB::table('stinvoice_company')
 		->updateOrInsert(
@@ -64,6 +91,9 @@ class CustomerDetails
 			 	'updated_at' => Carbon::now(),
 			]
 		);
+
+
+		return ['success','Successsfully update einvoice details'];
 	}
     
 }
