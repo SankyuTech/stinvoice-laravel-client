@@ -94,6 +94,7 @@ class CompanyDetails
 			 	'address_line_3' => $data['address_line_3'] ?? NULL,
 			 	'city' => $data['city'] ?? NULL,
 			 	'postcode' => $data['postcode'] ?? NULL,
+			 	'state' => $data['state'] ?? NULL,
 			 	'country_code' => $data['country_code'] ?? 'MYS',
 			 	'updated_at' => Carbon::now(),
 			]
@@ -162,6 +163,7 @@ class CompanyDetails
 			 	'address_line_3' => $data['address_line_3'] ?? NULL,
 			 	'city' => $data['city'] ?? NULL,
 			 	'postcode' => $data['postcode'] ?? NULL,
+			 	'state' => $data['state'] ?? NULL,
 			 	'country_code' => $data['country_code'] ?? 'MYS',
 			 	'stinvoice_key' => $data['stinvoice_key'] ?? NULL,
 			 	'stinvoice_secret' => $data['stinvoice_secret'] ?? NULL,
