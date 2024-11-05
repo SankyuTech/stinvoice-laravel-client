@@ -44,7 +44,7 @@ class CustomerDetails
 		return $credential;
 	}
 
-	public function saveDetail($data,$supplier_id == null){
+	public function saveDetail($data,$supplier_id =null){
 
 		if($supplier_id == null){
 
