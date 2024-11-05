@@ -22,7 +22,7 @@ class CustomerDetails
 					 	'phone',
 					 	'email',
 					 	'tax_identification_no',
-					 	'identification_no'
+					 	'identification_no',
 					 	'identification_type',
 					 	'sst_registration_no',
 					 	'msic_codes',
