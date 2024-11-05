@@ -46,7 +46,7 @@ class CustomerDetails
 
 	public function saveDetail($data,$supplier_id =null){
 
-		if($supplier_id == null){
+		if($supplier_id != null){
 
 			$companyCredentials = new CompanyCredentials($supplier_id);
 			$credential = $companyCredentials->getCredential();
