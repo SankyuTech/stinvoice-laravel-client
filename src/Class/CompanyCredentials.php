@@ -51,8 +51,6 @@ class CompanyCredentials
 
 			$result = json_decode($responseBody, true);
 
-			dd($result);
-
 			if($result['data'] == 'pong'){
 
 				return true;
