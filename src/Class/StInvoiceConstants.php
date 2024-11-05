@@ -7,9 +7,9 @@ use Carbon\Carbon;
 
 use Sankyu\Constants;
 
-class Constants
+class StInvoiceConstants
 {
-    public function getListStates(){
+    public static function getListStates(){
 
     	$states = Constants::StateCodes();
 
