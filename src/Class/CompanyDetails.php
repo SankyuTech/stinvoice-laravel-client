@@ -48,6 +48,7 @@ class CompanyDetails
 
 		$details = DB::table('stinvoice_company')
 					 ->select(
+					 	'id',
 					 	'registration_name',
 					 	'phone',
 					 	'email',
