@@ -46,7 +46,7 @@ class CompanySubmission
 
 	public function saveSubmission($data){
 
-		DB::table('stinvoice_company')
+		DB::table('stinvoice_submission')
 		->insert(
 			[
 			 	'stinvoice_company_id' => $data['stinvoice_company_id'] ?? NULL,
