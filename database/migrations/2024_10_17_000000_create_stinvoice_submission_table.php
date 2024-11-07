@@ -17,8 +17,10 @@ return new class () extends Migration {
             $table->string('reference_no')->nullable();
             $table->string('einvoice_submission_uuid')->nullable();
             $table->string('einvoice_submission_invoice_uuid')->nullable();
+            $table->string('einvoice_validation_link')->nullable();
             $table->string('document_type')->nullable();
             $table->boolean('stinvoice_sandbox')->default(1);
+            $table->longText('stinvoice_parameter_structure')->nullable();
             $table->longText('raw_submission')->nullable();
             $table->longText('response')->nullable();
             $table->boolean('status')->default(1);

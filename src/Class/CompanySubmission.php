@@ -52,7 +52,15 @@ class CompanySubmission
 			 	'stinvoice_company_id' => $data['stinvoice_company_id'] ?? NULL,
 			 	'internal_reference_id' => $data['internal_reference_id'] ?? NULL,
 			 	'reference_no' => $data['reference_no'] ?? false,
+			 	'einvoice_submission_uuid' => $data['einvoice_submission_uuid'] ?? NULL,
+			 	'einvoice_submission_invoice_uuid' => $data['einvoice_submission_invoice_uuid'] ?? NULL,
+			 	'einvoice_validation_link' => $data['einvoice_validation_link'] ?? NULL,
 			 	'document_type' => $data['document_type'] ?? false,
+			 	'stinvoice_sandbox' => $data['stinvoice_sandbox'] ?? 1,
+			 	'stinvoice_parameter_structure' => $data['stinvoice_parameter_structure'] ?? NULL,
+			 	'raw_submission' => $data['raw_submission'] ?? NULL,
+			 	'response' => $data['response'] ?? NULL,
+			 	'status' => $data['status'] ?? 1,
 			 	'updated_at' => Carbon::now(),
 			]
 		);
