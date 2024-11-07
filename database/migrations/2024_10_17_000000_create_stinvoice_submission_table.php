@@ -24,7 +24,7 @@ return new class () extends Migration {
             $table->boolean('stinvoice_sandbox')->default(1);
             $table->longText('raw_submission')->nullable();
             $table->longText('response')->nullable();
-            $table->boolean('status')->default(1);
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
