@@ -46,10 +46,14 @@ class CompanySubmission
 
 	public function saveSubmission($data){
 
+		$company = DB::table('stinvoice_company')
+					->where('internal_reference_id',$this->internal_reference_id)
+					 ->first();
+
 		DB::table('stinvoice_company')
 		->insert(
 			[
-			 	'stinvoice_company_id' => $data['stinvoice_company_id'] ?? NULL,
+			 	'stinvoice_company_id' => $company->id,
 			 	'internal_reference_id' => $data['internal_reference_id'] ?? NULL,
 			 	'reference_no' => $data['reference_no'] ?? false,
 			 	'einvoice_submission_uuid' => $data['einvoice_submission_uuid'] ?? NULL,
@@ -59,7 +63,6 @@ class CompanySubmission
 			 	'einvoice_submission_timestamp' => $data['einvoice_submission_timestamp'] ?? NULL,
 			 	'document_type' => $data['document_type'] ?? false,
 			 	'stinvoice_sandbox' => $data['stinvoice_sandbox'] ?? 1,
-			 	'stinvoice_parameter_structure' => $data['stinvoice_parameter_structure'] ?? NULL,
 			 	'raw_submission' => $data['raw_submission'] ?? NULL,
 			 	'response' => $data['response'] ?? NULL,
 			 	'status' => $data['status'] ?? 1,

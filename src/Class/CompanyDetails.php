@@ -19,8 +19,9 @@ class CompanyDetails
 
 	public function getDetail(){
 
-		$credential = DB::table('stinvoice_company')
+		$details = DB::table('stinvoice_company')
 					 ->select(
+					 	'id',
 					 	'registration_name',
 					 	'phone',
 					 	'email',
@@ -40,12 +41,12 @@ class CompanyDetails
 					 ->where('internal_reference_id',$this->internal_reference_id)
 					 ->first();
 
-		return $credential;
+		return $details;
 	}
 
 	public function getDetailWithCredential(){
 
-		$credential = DB::table('stinvoice_company')
+		$details = DB::table('stinvoice_company')
 					 ->select(
 					 	'registration_name',
 					 	'phone',
@@ -71,7 +72,7 @@ class CompanyDetails
 					 ->where('internal_reference_id',$this->internal_reference_id)
 					 ->first();
 
-		return $credential;
+		return $details;
 	}
 
 	public function saveDetail($data){
