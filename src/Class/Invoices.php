@@ -59,7 +59,7 @@ class Invoices
 
 	public function getInvoice($einvoice_submission_invoice_uuid){
 
-		$invoice = DB::table('stinvoice_invoices')
+		$invoice = DB::table('stinvoice_submission')
 					 ->where('einvoice_submission_invoice_uuid',$einvoice_submission_invoice_uuid)
 					 ->first();
 
@@ -68,7 +68,7 @@ class Invoices
 
 	public function getSubmission($einvoice_submission_uuid){
 
-		$submission = DB::table('stinvoice_invoices')
+		$submission = DB::table('stinvoice_submission')
 					 ->where('einvoice_submission_uuid',$einvoice_submission_uuid)
 					 ->first();
 

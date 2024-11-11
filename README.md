@@ -51,6 +51,9 @@ Check & fetch company details & ST Invoice Credentials
 
 ```php
 
+        use Sankyutech\StInvoiceClient\Class\CompanyDetails;
+        use Sankyutech\StInvoiceClient\Class\StInvoiceConstants;
+
         $companyDetails = new CompanyDetails(session('supplier_id'));
         $einvoice_company_details = $companyDetails->getDetailWithCredential();
 
@@ -64,6 +67,8 @@ Check & fetch company details & ST Invoice Credentials
 
 ```php
         
+        use Sankyutech\StInvoiceClient\Class\CompanyDetails;
+
         $data['registration_name'] = $request->registration_name;
         $data['phone'] = $request->phone;
         $data['email'] = $request->email;
@@ -95,6 +100,9 @@ Check & fetch company details & ST Invoice Credentials
 Check & fetch client details
 
 ```php
+    
+        use Sankyutech\StInvoiceClient\Class\StInvoiceConstants;
+        use Sankyutech\StInvoiceClient\Class\CustomerDetails;
 
         $customerDetails = new CustomerDetails($client->id);
         $einvoice_customer_details = $customerDetails->getDetail();
@@ -109,6 +117,8 @@ Check & fetch client details
 
 ```php
         
+        use Sankyutech\StInvoiceClient\Class\CustomerDetails;
+
         $data['registration_name'] = $request->registration_name;
         $data['phone'] = $request->phone;
         $data['email'] = $request->email;
@@ -137,7 +147,26 @@ Check & fetch client details
 Invoice submission require to ST Invoice Adapter functions. ST Invoice Client will be use for submission records, storing supplier and buyer details for E-Invoice usage.
 
 ```php
-	
+	   
+        use Sankyutech\StInvoiceClient\Class\CustomerDetails;
+        use Sankyutech\StInvoiceClient\Class\CompanyCredentials;
+        use Sankyutech\StInvoiceClient\Class\CompanyDetails;
+        use Sankyutech\StInvoiceClient\Class\CompanySubmission;
+
+        use Sankyu\Client;
+        use Sankyu\One\Submission;
+        use Sankyu\CustomSankyuAuth;
+        use GuzzleHttp\ClientInterface;
+        use GuzzleHttp\Client as GuzzleClient;
+
+        use Sankyu\One\Mapper\ReferenceNumber;
+        use Sankyu\One\Mapper\Supplier;
+        use Sankyu\One\Mapper\Customer;
+        use Sankyu\One\Mapper\TaxTotal;
+        use Sankyu\One\Mapper\LegalMonitoryTotal;
+        use Sankyu\One\Mapper\AllowanceCharges;
+        use Sankyu\One\Mapper\Wrapper;
+
 		//fetching supplier details
 
         $companyDetails = new CompanyDetails($order->suplier_id);
@@ -364,7 +393,11 @@ Invoice submission require to ST Invoice Adapter functions. ST Invoice Client wi
 
 Fetching submission details
 ```php
-
+        
+        use Sankyutech\StInvoiceClient\Class\Invoices;
+        
+        $einvoice = new Invoices(session('supplier_id'));
+        $einvoiceDetails = $einvoice->getInvoice($sales->einvoice_submission_invoice_uuid);
 ```
 
 ### Changelog
