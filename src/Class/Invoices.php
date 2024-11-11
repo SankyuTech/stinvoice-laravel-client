@@ -57,13 +57,22 @@ class Invoices
 
     }
 
-	public function getInvoice($stinvoice_submission_id){
+	public function getInvoice($einvoice_submission_invoice_uuid){
 
 		$invoice = DB::table('stinvoice_invoices')
-					 ->where('stinvoice_submission_id',$stinvoice_submission_id)
+					 ->where('einvoice_submission_invoice_uuid',$einvoice_submission_invoice_uuid)
 					 ->first();
 
 		return $invoice;
+	}
+
+	public function getSubmission($einvoice_submission_uuid){
+
+		$submission = DB::table('stinvoice_invoices')
+					 ->where('einvoice_submission_uuid',$einvoice_submission_uuid)
+					 ->first();
+
+		return $submission;
 	}
 
 	public function saveInvoice($data){
