@@ -20,7 +20,7 @@ class CustomerDetails
 
 	public function getDetail(){
 
-		$credential = DB::table('stinvoice_company')
+		$credential = DB::table('stinvoice_customer')
 					 ->select(
 					 	'registration_name',
 					 	'phone',
@@ -69,7 +69,7 @@ class CustomerDetails
 
 		}
 
-		DB::table('stinvoice_company')
+		DB::table('stinvoice_customer')
 		->updateOrInsert(
 			[
 				'internal_reference_id' => $this->internal_reference_id
