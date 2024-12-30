@@ -29,7 +29,6 @@ class CustomerDetails
 					 	'identification_no',
 					 	'identification_type',
 					 	'sst_registration_no',
-					 	'msic_codes',
 					 	'address_line_1',
 					 	'address_line_2',
 					 	'address_line_3',

@@ -54,7 +54,9 @@ Check & fetch company details & ST Invoice Credentials
 use Sankyutech\StInvoiceClient\Class\CompanyDetails;
 use Sankyutech\StInvoiceClient\Class\StInvoiceConstants;
 
-$companyDetails = new CompanyDetails(session('supplier_id'));
+$supplier_id = 1;
+
+$companyDetails = new CompanyDetails($supplier_id);
 $einvoice_company_details = $companyDetails->getDetailWithCredential();
 
 // eg: dropdown input usage, at address details section
@@ -104,7 +106,9 @@ Check & fetch client details
 use Sankyutech\StInvoiceClient\Class\StInvoiceConstants;
 use Sankyutech\StInvoiceClient\Class\CustomerDetails;
 
-$customerDetails = new CustomerDetails($client->id);
+$client_id = 1;
+
+$customerDetails = new CustomerDetails($client_id);
 $einvoice_customer_details = $customerDetails->getDetail();
 
 // eg: dropdown input usage, at address details section
@@ -136,8 +140,9 @@ $data['country_code'] = $request->country_code;
 $customerDetails = new CustomerDetails($client->id);
 
 // 2nd parameter is optional, however second parameter will use for client TIN validation before details been save.
+$supplier_id = 1;
 
-$status = $customerDetails->saveDetail($data,session('supplier_id'));
+$status = $customerDetails->saveDetail($data,$supplier_id);
 
 ```
 
