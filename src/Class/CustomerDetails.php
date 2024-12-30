@@ -81,7 +81,6 @@ class CustomerDetails
 			 	'tax_identification_no' => $data['tax_identification_no'] ?? NULL,
 			 	'identification_no' => $data['identification_no'] ?? NULL,
 			 	'identification_type' => $data['identification_type'] ?? NULL,
-			 	'msic_codes' => $data['msic_codes'] ?? NULL,
 			 	'address_line_1' => $data['address_line_1'] ?? NULL,
 			 	'address_line_2' => $data['address_line_2'] ?? NULL,
 			 	'address_line_3' => $data['address_line_3'] ?? NULL,
