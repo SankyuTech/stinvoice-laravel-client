@@ -48,10 +48,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Sankyutech\\StinvoiceClient\\StinvoiceClientServiceProvider"
+        "Sankyutech\\StInvoiceClient\\StinvoiceClientServiceProvider"
       ],
       "aliases": {
-        "StinvoiceClient": "Sankyutech\\StinvoiceClient\\StinvoiceClientFacade"
+        "StinvoiceClient": "Sankyutech\\StInvoiceClient\\StinvoiceClientFacade"
       }
     }
   }
