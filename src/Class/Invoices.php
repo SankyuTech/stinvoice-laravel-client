@@ -66,6 +66,16 @@ class Invoices
 		return $invoice;
 	}
 
+
+	public function getSubmissionByInternalId($internal_reference_id){
+
+		$invoice = DB::table('stinvoice_submission')
+					 ->where('internal_reference_id',$internal_reference_id)
+					 ->first();
+
+		return $invoice;
+	}
+
 	public function getSubmission($einvoice_submission_uuid){
 
 		$submission = DB::table('stinvoice_submission')
